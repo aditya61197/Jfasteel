@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagonal Cards with Hover Effects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hexagon Shape */
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+            border: 3px solid #333; /* Darker border for a more refined look */
+            border-radius: 8px; /* Rounded edges for a softer card-like appearance */
+            padding: 15px; /* Add some space inside */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            font-family: 'Arial', sans-serif; /* A cleaner, modern font */
+        }
+
+        /* Hover Effect */
+        .hexagon:hover {
+            transform: scale(1.05) translateY(-6px); /* Slightly larger scale and smoother movement */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+            background-color: rgba(0, 128, 0, 0.9); /* Slightly stronger background color */
+            filter: brightness(1.1); /* Brightens the color on hover */
+        }
+
+        /* Hexagon Grid Alignment */
+        .hex-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -20px;
+        }
+
+        .hex-offset {
+            margin-left: calc(50px);
+        }
+
+        /* Background Colors */
+        .bg-flanges { background: #FF5733; }
+        .bg-rods { background: #33FF57; }
+        .bg-plates { background: #3357FF; }
+        .bg-buttweld { background: #FF33A1; }
+        .bg-pipes { background: #FFD700; }
+        .bg-forge { background: #7B68EE; }
+        .bg-tmt { background: #32CD32; }
+        .bg-wheels { background: #FF4500; }
+
+        /* Text Style for Cards */
+        .card-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <!-- Title -->
+    <h1 class="text-3xl font-semibold italic mb-6">We are experts in providing..........</h1>
+
+    <!-- Hexagonal Grid -->
+    <div>
+        <!-- Row 1 -->
+        <div class="hex-row">
+            <div class="hexagon w-52 h-52 bg-flanges flex items-center justify-center">
+                <div class="card-text">Flanges</div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="hex-row hex-offset">
+            <div class="hexagon w-52 h-52 bg-buttweld flex items-center justify-center">
+                <div class="card-text">Buttweld Fittings</div>
+            </div>
+            <div class="hexagon w-52 h-52 bg-rods flex items-center justify-center">
+                <div class="card-text">Rods</div>
+            </div>
+            <div class="hexagon w-52 h-52 bg-plates flex items-center justify-center">
+                <div class="card-text">Plates</div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="hex-row">
+            <div class="hexagon w-52 h-52 bg-pipes flex items-center justify-center">
+                <div class="card-text">Pipes & Tubes</div>
+            </div>
+            <div class="hexagon w-52 h-52 bg-forge flex items-center justify-center">
+                <div class="card-text">Forge Fittings</div>
+            </div>
+            <div class="hexagon w-52 h-52 bg-tmt flex items-center justify-center">
+                <div class="card-text">TMT Bars</div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="hex-row hex-offset">
+            <div class="hexagon w-52 h-52 bg-wheels flex items-center justify-center">
+                <div class="card-text">Wheels</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
